@@ -4,8 +4,11 @@ import { useEffect, useState } from "react"
 import Story from "./Story"
 import { type } from "os"
 import { useSession } from "next-auth/react"
-
+import { PlusCircleIcon } from "@heroicons/react/24/outline"
+import { useRecoilState, useRecoilValue } from "recoil"
+import { modalState } from "../atoms/modalAtom"
 const Stories = () => {
+  const [open, setOpen] = useRecoilState(modalState)
   const { data: session } = useSession()
   var [suggestions, setSuggestions] = useState([])
 
@@ -26,11 +29,17 @@ const Stories = () => {
   return (
     <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border border-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
       {session && (
-        <Story
-          key={"rajfekar123"}
-          imgurl={session?.user?.image}
-          username={session?.user?.username}
-        />
+        <div className="flex items-center justify-center ">
+          <Story
+            key={"rajfekar123"}
+            imgurl={session?.user?.image}
+            username={session?.user?.username}
+          />
+          <PlusCircleIcon
+            className="navBtn absolute text-gray-200 "
+            onClick={() => setOpen(true)}
+          />
+        </div>
       )}
       {suggestions.map((profile, i) => (
         <Story key={i} imgurl={profile.avatar} username={profile.username} />
