@@ -66,7 +66,12 @@ const Header = () => {
 
         <div className="flex items-center justify-end space-x-4">
           <HomeIcon className="navBtn" onClick={() => router.push("/")} />
-          <Bars3Icon className="h-7 w-10 md:hidden cursor-pointer " />
+          {/* <Bars3Icon className="h-7 w-10 md:hidden cursor-pointer " /> */}
+          <PlusCircleIcon
+            className="h-7 w-10 md:hidden cursor-pointer"
+            onClick={() => setOpen(true)}
+          />
+
           {session ? (
             <>
               <div className="relative navBtn">

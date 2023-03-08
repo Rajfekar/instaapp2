@@ -29,15 +29,14 @@ const Stories = () => {
   return (
     <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border border-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
       {session && (
-        <div className="flex items-center justify-center ">
+        <div
+          onClick={() => setOpen(true)}
+          className="flex items-center justify-center "
+        >
           <Story
             key={"rajfekar123"}
             imgurl={session?.user?.image}
             username={session?.user?.username}
-          />
-          <PlusCircleIcon
-            className="navBtn absolute text-gray-200 "
-            onClick={() => setOpen(true)}
           />
         </div>
       )}
