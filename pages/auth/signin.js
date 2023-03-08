@@ -13,7 +13,7 @@ const signIn = ({ providers }) => {
     <>
       <Header />
       <div className="flex flex-col justify-center items-center min-h-screen py-2  -mt-56 px-14 text-center ">
-        <img src="/Instagram_logo.png" alt="logo" className="w-80 mt-5" />
+        <h1 className="font-bold w-  lg:mt-2 tracking-wider">SocialApp</h1>
         <div className="mt-40">
           {Object.values(providers).map((provider, i) => (
             <div key={i}>
