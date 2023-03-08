@@ -91,6 +91,10 @@ const Header = () => {
                 alt="profile-pic"
                 className="h-10 rounded-full cursor-pointer navBtn"
               />
+
+              <button type="button" onClick={signOut}>
+                Logout
+              </button>
             </>
           ) : (
             <button type="button" onClick={signIn}>
