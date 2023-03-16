@@ -81,7 +81,7 @@ const Post = ({ id, username, userImg, img, caption }) => {
   return (
     <div
       className={`bg-white my-7 border rounded-sm ${
-        session && "xl:w-[600px]"
+        !session && "xl:w-[600px]"
       } `}
     >
       {/* Header */}
